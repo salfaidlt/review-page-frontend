@@ -9,16 +9,20 @@ import { AddReview } from './AddReview'
 const Navbar = () => {
     const { isLoaded, user } = useUser()
     const [newUser, setNewUser] = useState(false)
+    const [email, setEmail] = useState("")
+    const [fullName, setFullName] = useState("")
 
     useEffect(() => {
         if (user?.primaryEmailAddress?.emailAddress && user?.fullName) {
             checkAndAddUser(user?.primaryEmailAddress?.emailAddress, user?.fullName, setNewUser);
 
+            setEmail(user?.primaryEmailAddress?.emailAddress) 
+            setFullName(user?.fullName)
             if (newUser) 
-                toast.success("Welcome among us " + user?.fullName)
+                toast.success("Welcome among us " + fullName)
 
             }
-        }, [newUser, user]);
+        }, [fullName, newUser, user]);
 
 
 
@@ -28,7 +32,7 @@ const Navbar = () => {
             {(isLoaded && user) ? (
                 <>
                     <UserButton />
-                    <AddReview />
+                    <AddReview email={email} />
                 </>
             ) : (
                 <SignInButton />

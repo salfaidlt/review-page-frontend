@@ -11,9 +11,10 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { addNewReview } from "@/lib/db-actions"
 import React, { useState } from "react"
 
-export function AddReview() {
+export function AddReview(props: { email: string }) {
     const [service, setService] = useState("")
     const [comment, setComment] = useState("")
     const [rating, setRating] = useState<number>(0)
@@ -21,7 +22,7 @@ export function AddReview() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         
-        
+        addNewReview(props.email, service, comment, rating)
     }
 
     return (
@@ -70,6 +71,8 @@ export function AddReview() {
                                 type="number"
                                 value={rating}
                                 onChange={(e) => setRating(Number(e.target.value))}
+                                min={0}
+                                max={5}
                             />
                         </div>
                     </div>
