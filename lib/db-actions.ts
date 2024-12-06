@@ -2,7 +2,10 @@
 
 import axios from "axios"
 
-export async function checkAndAddUser (email: string, name: string) {
+export async function checkAndAddUser (
+    email: string, name: string, 
+    setNewUser: (arg0: boolean) => void ) {
+        
     if (!email) return
 
     try {
@@ -10,10 +13,13 @@ export async function checkAndAddUser (email: string, name: string) {
         const existingUser = await axios.post(url, 
             { email, name }
         )
-        console.log('====================================');
-        console.log(existingUser.data);
-        console.log('====================================');
+        if (existingUser.status === 201)
+            setNewUser(true)
     } catch (error) {
         console.error("Erreur lors de la vérification de l'utilisateur: " + error)
     }
 }
+
+// export async function addNewReview( service: string, comment: string, rating: number ) {
+
+// }
