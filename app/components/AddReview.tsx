@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 import { addNewReview } from "@/lib/db-actions"
 import React, { useState } from "react"
 
@@ -54,7 +55,7 @@ export function AddReview(props: { email: string }) {
                             <Label htmlFor="comment" className="text-right">
                                 Comment
                             </Label>
-                            <Input
+                            <Textarea
                                 id="comment"
                                 className="col-span-3"
                                 value={comment}

@@ -24,6 +24,7 @@ export interface User {
   
   export interface ReviewComment {
     id: string;
+    content: string;
     user: User;
     userId: string;
     review: Review;

@@ -35,3 +35,19 @@ export async function addNewReview( email: string, service: string, comment: str
         console.error(error)
     }
 }
+
+export async function addCommentToReview(comment: string, email: string, reviewId: string) {
+    if (!comment || !email || !reviewId) return
+
+    try {
+        const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/reviews/add-comment/"
+        const comment_ = await axios.post(url, 
+            { comment, email, reviewId }
+        )
+        console.log('====================================');
+        console.log(comment_.data);
+        console.log('====================================');
+    } catch (error) {
+        console.error(error)
+    }
+}
