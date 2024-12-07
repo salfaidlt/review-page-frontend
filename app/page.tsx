@@ -1,9 +1,9 @@
 "use client"
-// pages/index.tsx ou pages/home.tsx
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ReviewComponent from "./components/ReviewComponent";
 import { Review } from "@/lib/types";
+import GoToTop from "./components/GoToTop";
 
 export default function Home() {
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -28,6 +28,8 @@ export default function Home() {
     return <div>Error: {error}</div>;
   }
 
+  
+
   return (
     <div>
       <h1 className="text-4xl">List of all reviews</h1>
@@ -42,7 +44,7 @@ export default function Home() {
           ))}
         </ul>
       ) }
-      
+      <GoToTop />
     </div>
   );
 }

@@ -16,22 +16,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-      >
-        <ClerkProvider>
-          <html lang="en">
-            <body>
-              <Navbar />
-              <div className="h-full">
-                {children}
-              </div>
-              <ToastContainer />
-            </body>
-          </html>
-        </ClerkProvider>
-
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body>
+          <Navbar />
+          <div className="h-full">
+            {children}
+          </div>
+          <ToastContainer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
