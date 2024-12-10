@@ -56,15 +56,15 @@ const ReviewComponent: React.FC<ReviewComponentProps> = ({ review }) => {
                 <div className="collapse bg-gray-100">
                     <input type="checkbox" />
                     <div className="collapse-title font-bold">Comments {review.reviewComments.length}</div>
-                        <div className="collapse-content">
-                            {sortedComments.map((comment) => (
-                                <div key={comment.id} className="comment mb-2">
-                                    <p className="text-foreground">{comment.user.name}: {comment.content}</p>
-                                    <p className="text-sm text-gray-400 font-extralight">posted on: {new Date(comment.createdAt).toLocaleString()}</p>
-                                    <br />
-                                </div>
-                            ))}
-                        </div>
+                    <div className="collapse-content">
+                        {sortedComments.map((comment) => (
+                            <div key={comment.id} className="comment mb-2">
+                                <p className="text-foreground">{comment.user.name}: {comment.content}</p>
+                                <p className="text-sm text-gray-400 font-extralight">posted on: {new Date(comment.createdAt).toLocaleString()}</p>
+                                <br />
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 <br />
 
