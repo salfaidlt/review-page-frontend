@@ -60,8 +60,8 @@ const ReviewComponent: React.FC<ReviewComponentProps> = ({ review }) => {
                         {sortedComments.map((comment) => (
                             <div key={comment.id} className="comment mb-2">
                                 <p className="text-foreground">{comment.user.name}: {comment.content}</p>
-                                <p className="text-gray-400 text-sm font-extralight">posted on: {new Date(comment.createdAt).toLocaleString()}</p>
-                                <br />
+                                <p className="text-sm text-gray-400 font-extralight">posted on: {new Date(comment.createdAt).toLocaleString()}</p>
+                            <br />
                             </div>
                         ))}
                     </div>
