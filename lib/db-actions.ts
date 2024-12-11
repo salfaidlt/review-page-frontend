@@ -13,10 +13,8 @@ export async function checkAndAddUser (
         const existingUser = await axios.post(url, 
             { email, name }
         )
-        if (existingUser.status === 201) {
-
+        if (existingUser.status === 201)
             setNewUser(true)
-        }
     } catch (error) {
         console.error("Erreur lors de la vérification de l'utilisateur: " + error)
     }
