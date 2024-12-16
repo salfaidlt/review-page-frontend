@@ -44,7 +44,7 @@ export default function Home() {
           ))}
         </ul>
       ) }
-      {/* <GoToTop /> */}
+      <GoToTop />
     </div>
   );
 }
