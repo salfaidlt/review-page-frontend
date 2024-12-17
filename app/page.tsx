@@ -34,7 +34,7 @@ export default function Home() {
     <div>
       <h1 className="text-4xl">List of all reviews</h1>
       { reviews.length === 0 ? (
-        <div className="text-gray-600">Reviews list is empty</div>
+        <div className="text-gray-700">Reviews list is empty</div>
       ) : (
         <ul>
           {reviews.map((review) => (
