@@ -6,7 +6,7 @@ export async function checkAndAddUser (
     email: string, name: string, 
     setNewUser: (arg0: boolean) => void ) {
         
-    if (!email) return
+    if (!email) return;
 
     try {
         const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/users/check-and-add/"
