@@ -18,9 +18,8 @@ const Navbar = () => {
 
             setEmail(user?.primaryEmailAddress?.emailAddress) 
             setFullName(user?.fullName)
-            if (newUser) {
+            if (newUser)
                 toast.success("Welcome among us " + fullName)
-            }
 
             }
         }, [fullName, newUser, user]);
