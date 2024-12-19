@@ -21,8 +21,7 @@ export function AddReview(props: { email: string }) {
     const [rating, setRating] = useState<number>(0)
 
     const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        
+        e.preventDefault();        
         addNewReview(props.email, service, comment, rating)
     }
 
