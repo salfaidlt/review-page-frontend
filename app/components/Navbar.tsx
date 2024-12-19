@@ -32,6 +32,7 @@ const Navbar = () => {
             {(isLoaded && user) ? (
                 <>
                     <UserButton />
+                    
                     <AddReview email={email} />
                 </>
             ) : (
