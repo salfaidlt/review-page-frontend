@@ -17,7 +17,7 @@ export interface Review {
   userId: string;
   reviewComments: ReviewComment[];
   createdAt: Date;
-  reviewLikes: ReviewLike[];
+  reviewLikes: ReviewLike[]
 }
 
 export interface ReviewComment {
@@ -27,7 +27,7 @@ export interface ReviewComment {
   userId: string;
   review: Review;
   reviewId: string;
-  createdAt: Date;
+  createdAt: Date
 }
 
 export interface ReviewLike {
