@@ -5,7 +5,7 @@ export interface User {
   reviews: Review[];
   reviewComments: ReviewComment[];
   createdAt: Date;
-  reviewLikes: ReviewLike[];
+  reviewLikes: ReviewLike[]
 }
 
 export interface Review {
