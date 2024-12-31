@@ -36,5 +36,5 @@ export interface ReviewLike {
   userId: string;
   review: Review;
   reviewId: string;
-  createdAt: Date;
+  createdAt: Date
 }
